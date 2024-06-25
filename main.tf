@@ -11,7 +11,7 @@
 #Step 1: Create VPC
 resource "aws_vpc" "tfvpc"{
     cidr = "10.0.0.0/16"
-    tag = {
+    tags = {
         Name = "MyTerraformVPC"
     }
 }
