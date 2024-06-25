@@ -16,7 +16,7 @@ resource "aws_vpc" "tfvpc"{
 #Step 2: Create Public Subnet
 resource "aws_subnet" "PublicSubnet"{
     vpc_id = aws_vpc.tfvpc.id
-    cidr_block = "10.0.1.0/16"
+    cidr_block = "10.0.1.0/24"
     }
 
 
@@ -24,11 +24,10 @@ resource "aws_subnet" "PublicSubnet"{
 
 resource "aws_subnet" "PrivateSubnet"{
     vpc_id = aws_vpc.tfvpc.id
-    cidr_block = "10.0.2.0/16"
+    cidr_block = "10.0.2.0/24"
     }
 
 #Step 4: Create Internet Gateway(IGW)
-
 resource "aws_internet_gateway" "igw" {
     vpc_id = aws_vpc.tfvpc.id
     
@@ -38,7 +37,7 @@ resource "aws_internet_gateway" "igw" {
 resource "aws_route_table" "PublicRT" {
     vpc_id = aws_vpc.tfvpc.id
     route {
-        cidr_block = ".0.0.0.0/0"
+        cidr_block = "0.0.0.0/0"
         gateway_id = "aws_internet_gateway.igw"
     }
 }
