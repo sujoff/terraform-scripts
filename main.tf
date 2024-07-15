@@ -1,5 +1,4 @@
-# Welcome to my VPC created using Terraform
-# This is my first VPC and It'll surely be working fine
+# Welcome to my short & simple terraform script list where I've created AWS VPC
 # Here we go.
 # Here we go.
 # Here we go.
